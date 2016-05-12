@@ -7,7 +7,10 @@ var url = require('url');
 
 var config = parseServerConfig(__dirname, {
   defaults: 'config.js',
-  secrets: 'secrets.js'
+  secrets: 'secrets.js',
+  liveQuery: {
+    classNames: ['EventZ']
+  }
 });
 
 // Modify config as necessary before initializing parse server & dashboard
@@ -21,3 +24,5 @@ var httpServer = http.createServer(app);
 httpServer.listen(process.env.PORT || url.parse(config.server.serverURL).port, function () {
   console.log(`Parse Server running at ${config.server.serverURL}`);
 });
+
+var parseLiveQueryServer = ParseServer.createLiveQueryServer(httpServer);
