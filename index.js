@@ -7,13 +7,14 @@ var url = require('url');
 
 var config = parseServerConfig(__dirname, {
   defaults: 'config.js',
-  secrets: 'secrets.js',
-  liveQuery: {
-    classNames: ['EventZ']
-  }
+  secrets: 'secrets.js'
 });
 
 // Modify config as necessary before initializing parse server & dashboard
+
+config.liveQuery = {
+  classNames: ['EventZ']
+};
 
 var app = express();
 app.use('/public', express.static(__dirname + '/public'));
