@@ -15,6 +15,7 @@ var config = parseServerConfig(__dirname, {
 config.liveQuery = {
   classNames: ['EventZ']
 };
+console.log(config);
 
 var app = express();
 app.use('/public', express.static(__dirname + '/public'));
