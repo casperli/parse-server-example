@@ -15,6 +15,11 @@ var config = parseServerConfig(__dirname, {
 config.liveQuery = {
   classNames: ['EventZ']
 };
+
+config.websocketTimeout = 10 * 1000;
+config.cacheTimeout = 60 * 600 * 1000;
+config.logLevel = 'VERBOSE';
+
 console.log(config);
 
 var app = express();
