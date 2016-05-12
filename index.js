@@ -12,13 +12,13 @@ var config = parseServerConfig(__dirname, {
 
 // Modify config as necessary before initializing parse server & dashboard
 
-config.liveQuery = {
+config.server.liveQuery = {
   classNames: ['EventZ']
 };
 
-config.websocketTimeout = 10 * 1000;
-config.cacheTimeout = 60 * 600 * 1000;
-config.logLevel = 'VERBOSE';
+config.server.websocketTimeout = 10 * 1000;
+config.server.cacheTimeout = 60 * 600 * 1000;
+config.server.logLevel = 'VERBOSE';
 
 console.log(config);
 
